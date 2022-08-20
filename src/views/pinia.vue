@@ -23,7 +23,7 @@ const test = useTestStore()
 // 5   test.setCurrent((+'123'))
 const onchange = () => {
 
-  // test.current++
+  test.current++
 
   // test.$patch({
   //   current: 222,

@@ -1,4 +1,4 @@
-import { createApp } from 'vue'
+import {createApp} from 'vue'
 import './style.css'
 import App from './App.vue'
 import router from './router/index';
@@ -6,6 +6,7 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import Loading from "./components/Loading";
 import {createPinia} from "pinia";
+import {piniaPersistence} from "./plugin/pinia";
 
 // declare module '@vue/runtime-core'{
 //     export  interface  ComponentCustomproperties{
@@ -15,4 +16,10 @@ import {createPinia} from "pinia";
 //         }
 //     }
 // }
-createApp(App).use(router).use(createPinia()).use(Loading).use(ElementPlus).mount('#app')
+const pinia = createPinia()
+pinia.use(piniaPersistence({
+    key: 'wkPinia',
+    // 如果穿storeName 就只持久化传的store。 如果不传就持久化所有的store
+    storeName: ['TEST']
+}))
+createApp(App).use(router).use(pinia).use(Loading).use(ElementPlus).mount('#app')
