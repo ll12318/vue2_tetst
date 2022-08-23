@@ -4,6 +4,7 @@ import App from './App.vue'
 import router from './router/index';
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
+import 'animate.css';
 import Loading from "./components/Loading";
 import {createPinia} from "pinia";
 import {piniaPersistence} from "./plugin/pinia";

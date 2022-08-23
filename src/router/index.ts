@@ -22,6 +22,16 @@ export const routes: Array<RouteRecordRaw> = [
         name: "pinia",
         component: () => import("../views/pinia.vue"),
     },
+    {
+        path: "/theme",
+        name: "theme",
+        component: () => import("../views/theme.vue"),
+    },
+    {
+        path: "/animation",
+        name: "animation",
+        component: () => import("../views/animation.vue"),
+    },
 ];
 
 const router = createRouter({
